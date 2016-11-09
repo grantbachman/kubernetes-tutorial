@@ -3,8 +3,7 @@
 ## Set up a Kubernetes cluster on AWS
 1. `cd /path/to/project`
 2. `export KUBERNETES_PROVIDER=aws; curl -sS https://get.k8s.io | bash`
-  * This command does it all in one script, including bringing up master/minion EC2 instances, creating a VPC, etc. 
-3. Make `kubectl` script available: `export PATH=/path/to/project/kubernetes/platforms/darwin/amd64:$PATH`
+  * This command does it all in one script, including bringing up master/minion EC2 instances, creating a VPC, configuring routes, etc. 
 
 ## Tear down Kubernetes cluster on AWS
 1. `cd /path/to/project/kubernetes`
