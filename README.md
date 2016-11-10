@@ -7,8 +7,8 @@ This tutorial is meant to quickly get users up and running with Docker and Kuber
 
 ## Test Docker
 Download this repository.
-1. `cd example/`
 
+1. `cd example/`
 2. Build a docker image.
 
    `docker build -t api .`
