@@ -6,15 +6,15 @@ This tutorial is meant to quickly get users up and running with Docker and Kuber
 1. Being lazy tonight. Just go [here](https://docs.docker.com/docker-for-mac/) and click download. I'll assume everything went peachy.
 
 ## Test Docker
-Download this repository.
 
-1. `cd example/`
-2. Build a docker image.
+1. Download this repository `git clone git@github.com:grantbachman/kubernetes-tutorial.git`
+2. `cd kubernetes-tutorial/example/`
+3. Build a docker image.
 
    `docker build -t api .`
 
   This command tells docker to build an image (`docker build`) tagged with a name (`-t api`) using the current directory (`.`).
-3. Run a container based on the image we just built.
+4. Run a container based on the image we just built.
 
     `docker run -p 1234:5000 api`
 
@@ -25,4 +25,4 @@ Download this repository.
         * If you only tell docker to expose the port but don't specify which port it should be published as, it'll pick a random one. You can figure out which port it's published as by running `docker ps` to get the Container ID, then `docker inspect $CONTAINER_ID`, and looking at *NetworkSettings*
       * run the container from the image called `api`
 
-4. Visit [localhost:1234](localhost:1234). You should see a message saying *Flask Dockerized*. If you see this message then you're good to go with Docker!
+5. Visit [localhost:1234](localhost:1234). You should see a message saying *Flask Dockerized*. If you see this message then you're good to go with Docker!
