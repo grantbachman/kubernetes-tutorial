@@ -23,6 +23,6 @@ Download this repository.
       * publish the container's port 5000 to the host machine's port 1234 (`-p 1234:5000`).
         * By default, docker containers run in isolation, so you won't be able to access the application from the outside world. Since the container's application is running on port 5000 we need to tell docker to expose that port so the host machine (my laptop) can access it.
         * If you only tell docker to expose the port but don't specify which port it should be published as, it'll pick a random one. You can figure out which port it's published as by running `docker ps` to get the Container ID, then `docker inspect $CONTAINER_ID`, and looking at *NetworkSettings*
-      * run the container from the called `api`
+      * run the container from the image called `api`
 
 4. Visit [localhost:1234](localhost:1234). You should see a message saying *Flask Dockerized*. If you see this message then you're good to go with Docker!
