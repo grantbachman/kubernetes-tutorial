@@ -15,9 +15,11 @@ Running locally is important for getting configuration right before deploying a 
 [Reference](https://github.com/kubernetes/minikube/blob/v0.12.2/README.md)
 
 1. Start a cluster locally: `minikube start`
-2. Push your image to [a docker image repository](https://hub.docker.com/) so that Kubernetes can find it. This is necessary because kubernetes cannot pull from locally stored images.
+2. Push your image to [a docker image repository](https://hub.docker.com/) so that Kubernetes can find it.
   1. `docker tag api grantbachman/api`
-  2. `docker push grantbachman/api`
+  * `docker push grantbachman/api`
+  * Another option is to run `eval $(minikube docker-env)`, which binds the docker daemon running on your machine to the docker daemon running inside the minikube VM. **When doing this
+  you must build images with a tag like *api:v1* (not *api*)**. You can then rebuild the image and it'll be available for reference in Step 3. [Reference](https://www.brandpending.com/2016/09/20/using-minikube-as-a-local-kubernetes-test-and-development-environment-on-macos/).
 3. Deploy this container as a pod: `kubectl run api --image=grantbachman/api --port=5000`
   * `kubectl run api` creates a pod called `api`
   * `--image=grantbachman/api` uses the image hosted at Docker Hub as the thing that should run inside the pod. You can specify any docker repository here.
